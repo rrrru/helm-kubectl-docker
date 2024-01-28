@@ -1,11 +1,8 @@
-FROM alpine:3.9
+FROM alpine:latest
 
-MAINTAINER Sergii Nuzhdin <ipaq.lw@gmail.com>
-
-ARG K8S_VERSION
-ARG HELM_VERSION
+ENV K8S_VERSION=v1.26.13
+ENV HELM_VERSION=v3.14.0
 ENV HELM_FILENAME=helm-${HELM_VERSION}-linux-amd64.tar.gz
-
 
 RUN apk add --update ca-certificates \
  && apk add --update -t deps curl  \
